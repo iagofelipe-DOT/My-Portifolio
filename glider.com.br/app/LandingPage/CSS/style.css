@@ -35,7 +35,38 @@ a {
     justify-content: space-between;
     border: 2px solid #6E6AA8;
 }
+.hero-img {
+    display: block;
+    width: 168px;
+    height: 168px;
+    object-fit: cover;
+    margin: 16px auto;
+}
 
+/* group buttons and add gap so they never overlap the image */
+.controls {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 12px;
+}
+
+/* make anchors behave like buttons if needed */
+.btn-primary, .btnBaixe, .btn-secondary {
+    display: inline-flex;
+    align-items: center;        /* vertically center text */
+    justify-content: center;    /* horizontally center text */
+    padding: 10px 22px;
+    height: auto;               /* let padding control height */
+    min-height: 40px;
+    width: auto;                /* don't force a fixed width */
+    min-width: 140px;           /* optional minimum width */
+    margin: 8px;                /* replace invalid '1cap' value */
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 16px;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
 header {
     display: flex;
     justify-content: space-between;
@@ -76,21 +107,35 @@ main.conteudo-central p {
     margin: 10px 0;
 }
 
-.btn-download {
+/* keep .btn-primary visual style */
+.btn-primary {
     background-color: #B0B0B0;
     color: #3A3868;
-    padding: 12px 40px;
     border: none;
-    border-radius: 4px;
-    margin-top: 40px;
-    font-family: 'Share Tech Mono', monospace;
-    font-size: 16px;
-    cursor: pointer;
-    transition: transform 0.2s;
 }
 
-.btn-download:hover {
+/* keep .btnBaixe-specific color if needed */
+.btnBaixe {
+    background-color: green;
+    color: #fff;
+}
+
+/* make .btn-secondary visually similar but subtle */
+.btn-secondary {
+    background-color: transparent;
+    color: inherit;
+    border: 1px solid rgba(224,224,224,0.12);
+}
+
+/* hover transform preserved for primary */
+.btn-primary:hover {
     transform: scale(1.05);
+}
+
+/* optional: ensure anchors styled as buttons behave the same */
+a.btn-primary, a.btnBaixe {
+    text-decoration: none;
+    display: inline-flex;
 }
 
 
@@ -189,32 +234,48 @@ footer img {
     background-color: #3A3D50;
 }
 
-.btnBaixe{
-    margin: 1cap; color: inherit; 
-    background-color: green; 
-    height:50px ;
-    width: 200px; 
-    font-family: 'Share Tech Mono', monospace;
-    border-radius: 10%;
+/* Input / label spacing and unified input styling */
+label {
+    display: block;
+    margin-bottom: 6px;              /* label sits close to its input */
+    font-size: 13px;
+    color: #CFCFCF;
 }
 
-.btnSobreNos{
-    margin: 1cap; 
-    color: inherit; 
-    background-color: inherit; 
-    height:50px ; width: 200px; 
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea {
+    width: 100%;
+    max-width: 420px;                /* keeps inputs a reasonable width */
+    padding: 10px 12px;
+    margin-bottom: 18px;             /* larger gap before the next label */
+    display: block;
+    background-color: rgba(58,61,80,0.92);
+    border: 1px solid #5A5A5A;
+    border-radius: 6px;
+    color: #E0E0E0;
     font-family: 'Share Tech Mono', monospace;
-    border-radius: 10%;
-}
-.mainHeader{
-    top: 60px;
-    position: fixed;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.12s ease, box-shadow 0.12s ease;
 }
 
-.mainFooter{
-    bottom: 10px;
-    position: fixed;
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: #9AA2FF;
+    box-shadow: 0 0 0 4px rgba(154,162,255,0.08);
 }
-.mainTitle{
-    bottom: 100px;
+
+/* responsive: let inputs fill container on small screens */
+@media (max-width: 480px) {
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    textarea {
+        max-width: 100%;
+    }
 }

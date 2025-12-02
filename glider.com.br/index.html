@@ -3,61 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = "stylesheet" href = "style.css">
-    <title>Glider-MainPage</title>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <link rel="stylesheet" href="./app/LandingPage/CSS/style.css">
+    <title>Glider</title>
 </head>
 <body>
+    <!--TODO: Set the Background Color to a blueish purple tone-->
 
-    <header class = "mainHeader"><a href = "cadastro.php"> Cadastre-se&emsp13; </a><a href="testing_branch/login.html"> Login&emsp13; </a></header>
+    <div id = mainContainer>
 
-    <h1 class = "mainTitle" id = "Title">Glider</h1>
-    <h1></h1>
+        <h1>Glider</h1><br>
+        <h1>Ta tarde pra caralho,amanhã qnd voltartermino de migrar os arquivos pro site,até agora eu so passei o front</h1>
 
-    <img src="img/Game_of_life_animated_glider_2.gif" id = "Glider_gif">
-    <h2></h2>
-    <button class = "btnBaixe">Baixe agora!</button>
-    <h1></h1>
-    <footer class="mainFooter"><button class = "btnSobreNos" id="Sobre">Sobre Nos</button></footer>
+        <!--TODO: Put the "Login and Register side by side, font-family to be defined"-->
+        <a href = "././app/HTML/Register/Login.html"> Login </a><br>
+        <a href = "/glider.com.br/app/HTML/Register/Register.html"> Register</a><br>
 
-    
-    <script>const a = document.getElementById("Sobre");
-        let isShowingAboutUs = false; 
-        let existingAboutUsElement = null; 
+        <!--Placeholder image, please remind me to put it on the imgs folder again when i go online-->
+        <img src="../../imgs/based.png" class="hero-img" width="168" height="168""><br>
         
-        function ShowAboutUs() { 
-       
-            if(isShowingAboutUs === false){
-        
-                const AboutUs = document.createElement("h3");
-                const Content = "Placeholdeer";
-                const Text = document.createTextNode(Content);
-                AboutUs.appendChild(Text);
-       
-                existingAboutUsElement = AboutUs; 
-        
-                const Glider_gif = document.getElementById("Glider_gif");
-               
-                if (Glider_gif) {
-                     document.body.insertBefore(AboutUs, Glider_gif);
-                } else {
-                     document.body.appendChild(AboutUs);
-                }
-        
+        <!--The app will be open source so the "Downlaod Now" button will lead to the github repo-->
+        <a href="https://github.com/" class="btn-primary btnBaixe" role="button">Download Now</a><br>
 
-                isShowingAboutUs = true;
+        <!--TODO: Assign something to the "AboutUs" button idk-->
+        <!-- The "AboutUs" will display some text with CSS fade in and fade out animations when clicked-->
+        <button class= "btn-secondary"> About Us </button>
+
+        <!--Need to add more things here ts is too empty ong fr fr-->
         
-            } 
-          
-            else {
-                if (existingAboutUsElement) {
-                    existingAboutUsElement.remove();
-                }
-           
-                isShowingAboutUs = false;
-            }
-        }
-        
-        a.addEventListener("click", ShowAboutUs);</script>
+    </div>
+
+    <div id="socialsContainer">
+
+        <!--TODO: ADD AT LEAST 4 <a href> TAGS THAT LEADS TO DIFFERENT WAYS OF CONTACTING US AND OUR SOCIAL MEDIA ACCOUNTS-->
+
+    </div>
+
 </body>
+<script></script>
 </html>
