@@ -1,0 +1,220 @@
+/* style.css */
+/* Estilos gerais para todo o projeto */
+
+/* Importa uma fonte do Google Fonts que se assemelha ao design */
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+/* Configurações globais */
+body {
+    font-family: 'Share Tech Mono', monospace;
+    margin: 0;
+    color: #E0E0E0; /* Cor de texto clara */
+    background: linear-gradient(160deg, #4F4C8C, #3A3868); /* Fundo gradiente */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Estilo para links genéricos */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* --- Estilos da Página Inicial (index.php) --- */
+
+.container-inicial {
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 40px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 2px solid #6E6AA8;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+header nav a {
+    margin-left: 15px;
+    padding: 8px 20px;
+    border: 1px solid #B0B0B0;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header nav a:hover {
+    background-color: #B0B0B0;
+    color: #333;
+}
+
+main.conteudo-central {
+    text-align: center;
+    font-size: 20px;
+    color: #C0C0C0;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main.conteudo-central p {
+    margin: 10px 0;
+}
+
+.btn-download {
+    background-color: #B0B0B0;
+    color: #3A3868;
+    padding: 12px 40px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 40px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.btn-download:hover {
+    transform: scale(1.05);
+}
+
+
+footer {
+    display: flex;
+    gap: 20px;
+}
+
+footer img {
+    width: 24px;
+    height: 24px;
+}
+
+/* --- Estilos dos Formulários (login.php e cadastro.php) --- */
+.back-arrow {
+    position: absolute;
+    top: 40px;
+    left: 60px;
+    font-size: 30px;
+}
+
+
+.form-container {
+    background-color: rgba(43, 45, 66, 0.8); /* Fundo semi-transparente */
+    padding: 40px;
+    border-radius: 8px;
+    width: 400px;
+    text-align: center;
+    border: 1px solid #5A5A5A;
+}
+
+.form-container h1 {
+    font-size: 32px;
+    letter-spacing: 8px;
+    margin-bottom: 40px;
+    padding: 10px;
+    border: 1px solid #777;
+    display: inline-block;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 12px;
+    color: #A0A0A0;
+    margin-bottom: 5px;
+    padding-left: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    background-color: #3A3D50;
+    border: 1px solid #5A5A5A;
+    border-radius: 4px;
+    color: #E0E0E0;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.btn-principal {
+    background-color: #4CAF50; /* Verde */
+    color: #E0E0E0;
+    padding: 12px;
+    width: 100%;
+    border: 1px solid #79C97C;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    letter-spacing: 2px;
+}
+
+.btn-principal:hover {
+    background-color: #45a049;
+}
+
+.btn-secundario {
+    background-color: transparent;
+    color: #A0A0A0;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #5A5A5A;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    letter-spacing: 2px;
+}
+
+.btn-secundario:hover {
+    background-color: #3A3D50;
+}
+
+.btnBaixe{
+    margin: 1cap; color: inherit; 
+    background-color: green; 
+    height:50px ;
+    width: 200px; 
+    font-family: 'Share Tech Mono', monospace;
+    border-radius: 10%;
+}
+
+.btnSobreNos{
+    margin: 1cap; 
+    color: inherit; 
+    background-color: inherit; 
+    height:50px ; width: 200px; 
+    font-family: 'Share Tech Mono', monospace;
+    border-radius: 10%;
+}
+.mainHeader{
+    top: 60px;
+    position: fixed;
+}
+
+.mainFooter{
+    bottom: 10px;
+    position: fixed;
+}
+.mainTitle{
+    bottom: 100px;
+}

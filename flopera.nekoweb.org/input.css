@@ -1,0 +1,10 @@
+body {
+    cursor: url("https://flopera.nekoweb.org/curs.png"),default;
+    font-family:'Times New Roman', Times, serif;
+    height: 100dvh;
+    background-color: red;
+}
+.titleBorder{
+    padding: 15px 100dvh;
+    background-color: wheat;
+}

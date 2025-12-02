@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "style.css">
+    <title>Glider-MainPage</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+    <header class = "mainHeader"><a href = "cadastro.php"> Cadastre-se&emsp13; </a><a href="testing_branch/login.html"> Login&emsp13; </a></header>
+
+    <h1 class = "mainTitle" id = "Title">Glider</h1>
+    <h1></h1>
+
+    <img src="img/Game_of_life_animated_glider_2.gif" id = "Glider_gif">
+    <h2></h2>
+    <button class = "btnBaixe">Baixe agora!</button>
+    <h1></h1>
+    <footer class="mainFooter"><button class = "btnSobreNos" id="Sobre">Sobre Nos</button></footer>
+
+    
+    <script>const a = document.getElementById("Sobre");
+        let isShowingAboutUs = false; 
+        let existingAboutUsElement = null; 
+        
+        function ShowAboutUs() { 
+       
+            if(isShowingAboutUs === false){
+        
+                const AboutUs = document.createElement("h3");
+                const Content = "Placeholdeer";
+                const Text = document.createTextNode(Content);
+                AboutUs.appendChild(Text);
+       
+                existingAboutUsElement = AboutUs; 
+        
+                const Glider_gif = document.getElementById("Glider_gif");
+               
+                if (Glider_gif) {
+                     document.body.insertBefore(AboutUs, Glider_gif);
+                } else {
+                     document.body.appendChild(AboutUs);
+                }
+        
+
+                isShowingAboutUs = true;
+        
+            } 
+          
+            else {
+                if (existingAboutUsElement) {
+                    existingAboutUsElement.remove();
+                }
+           
+                isShowingAboutUs = false;
+            }
+        }
+        
+        a.addEventListener("click", ShowAboutUs);</script>
+</body>
+</html>
