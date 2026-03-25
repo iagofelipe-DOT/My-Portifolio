@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Create Deck — Glider</title>
+    
+    <link rel="stylesheet" href="../../LandingPage/CSS/style.css">
+    <link rel="stylesheet" href="../home.css">
+    <link rel="stylesheet" href="../../components/sidebar.css">
+</head>
+<body>
+    <body>
+        <header class="no-select">
+            <div class="header-left">
+                <button class="sidebar-btn" id="sidebarToggle">☰</button> 
+                <h1 id="siteTitle" class="logo" onclick="window.location.href='../home.html'">Glider</h1>
+            </div>
+        </header>
+    <div class="form-container" style="width:520px; margin-top: 120px;">
+        <h1 class="no-select">Create Deck</h1>
+
+        <div class="input-group">
+            <label for="deckName" class="no-select">Deck Name</label>
+            <input id="deckName" type="text" placeholder="e.g. Biology 101">
+        </div>
+
+        <div class="input-group">
+            <label for="deckDescription" class="no-select">Description (optional)</label>
+            <textarea id="deckDescription" rows="4" placeholder="Write a description for your deck..."></textarea>
+        </div>
+
+        <div class="input-group">
+            <label class="no-select">Deck Cover Image (optional)</label>
+            <input id="deckImage" type="file" accept="image/*">
+            <div id="imagePreview" class="image-preview" aria-hidden="true"></div>
+        </div>
+
+        <div class="input-group">
+            <label for="deckTags" class="no-select">Tags (comma-separated, optional)</label>
+            <input id="deckTags" type="text" placeholder="e.g. biology, science, exam-prep">
+        </div>
+
+        <div class="input-group">
+            <label style="display: flex; align-items: center; gap: 8px; margin-bottom: 0;" class="no-select">
+                <input id="isPublic" type="checkbox">
+                <span>Make this deck public (anyone can view)</span>
+            </label>
+        </div>
+
+        <div style="display:flex;gap:10px;justify-content:space-between;align-items:center;">
+            <div id="status" style="opacity:0.9;font-size:13px;"></div>
+            <div class="input-group" style="margin-top: 20px; border-top: 1px solid #eee; padding-top: 20px;">
+            <label class="no-select">Add Flashcards to Deck</label>
+            <p style="font-size: 0.85em; color: #666; margin-bottom: 8px;">Select from your cards or public cards.</p>
+            
+            <input id="cardSearch" type="text" placeholder="Search cards by question or name..." style="margin-bottom: 10px;">
+
+            <div id="flashcardsList" style="
+                height: 250px; 
+                overflow-y: auto; 
+                border: 1px solid #ccc; 
+                border-radius: 6px; 
+                padding: 10px;
+                background: #fafafa;
+            ">
+                <div style="text-align:center; color:#999; margin-top: 20px;">Loading cards...</div>
+            </div>
+            
+            <div style="text-align: right; font-size: 0.8em; margin-top: 5px; color: #666;">
+                Selected: <span id="selectedCount">0</span>
+            </div>
+        </div>
+            <div style="display:flex;gap:8px;">
+                <button id="previewBtn" class="btn-secondary" type="button">Preview</button>
+                <button id="submitBtn" class="btn-primary" type="button">Create Deck</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./createDeck.js"></script>
+</body>
+</html>

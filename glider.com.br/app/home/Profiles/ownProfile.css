@@ -1,0 +1,126 @@
+/* ownProfile.css - Estilos de Edição */
+
+/* 1. REGRA NO-SELECT (Segurança) */
+.no-select {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+/* 2. INPUT DE NOME (Parece texto, mas edita) */
+.edit-h1-input {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent; /* Linha invisível */
+    color: #fff;
+    font-size: 4rem; /* Tamanho gigante igual viewProfile */
+    font-weight: 800;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    transition: border-color 0.2s;
+    /* Importante: Herda a fonte do site */
+    font-family: inherit; 
+}
+
+.edit-h1-input:focus {
+    border-bottom: 2px solid #4CAF50; /* Linha verde ao focar */
+}
+
+.edit-h1-input::placeholder {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+/* 3. FOTO DE PERFIL COM OVERLAY */
+.profile-avatar-wrapper {
+    position: relative;
+    cursor: pointer;
+    width: 230px;
+    height: 230px;
+}
+
+/* Ajuste fino para garantir que o círculo do viewProfile.css encaixa aqui */
+.profile-avatar-wrapper .profile-avatar {
+    width: 100%;
+    height: 100%;
+}
+
+.avatar-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%; /* Redondo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    opacity: 0; /* Invisível */
+    transition: opacity 0.2s ease;
+}
+
+.avatar-overlay i { font-size: 2rem; margin-bottom: 5px; }
+.avatar-overlay span { font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
+
+.profile-avatar-wrapper:hover .avatar-overlay {
+    opacity: 1; /* Aparece ao passar o rato */
+}
+
+/* 4. BOTÕES */
+.btn-secondary-spotify {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    border-radius: 30px;
+    padding: 14px 34px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-secondary-spotify:hover {
+    border-color: #fff;
+    transform: scale(1.05);
+}
+
+.status-msg {
+    height: 24px;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* 5. ABAS DE FILTRO */
+.deck-tabs {
+    display: flex;
+    gap: 10px;
+    background: #151421;
+    padding: 4px;
+    border-radius: 8px;
+    border: 1px solid #2A2940;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    color: #b3b3b3;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 6px 16px;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.tab-btn:hover { color: #fff; }
+
+.tab-btn.active {
+    background-color: #2A2940;
+    color: #fff;
+}

@@ -1,1 +1,0 @@
-//TODO: Read user input and send it to supabase db to see if it's valid, only if it is valid the user will be redirected to Home

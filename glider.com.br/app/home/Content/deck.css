@@ -1,0 +1,133 @@
+/* deck.css - Tema Roxo Profundo */
+
+/* 1. CLASSE DE PROTEÇÃO (NO-SELECT) */
+.no-select {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+/* 2. RESET E FUNDO */
+body {
+    background-color: #1E1D2F; 
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* 3. HEADER PADRÃO */
+header {
+    background-color: #151421;
+    border-bottom: 1px solid #2A2940;
+    position: fixed; top: 0; left: 0; width: 100%; height: 70px;
+    z-index: 1000; display: flex; align-items: center; justify-content: space-between;
+    padding: 0 20px; box-sizing: border-box;
+}
+header h1.logo { color: #fff; margin: 0; font-size: 1.5rem; cursor: pointer; }
+.sidebar-btn { background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; }
+.profile-pic { width: 40px; height: 40px; background-color: #555; border-radius: 50%; cursor: pointer; overflow: hidden; }
+
+/* 4. SIDEBAR */
+.sidebar { background-color: #151421; border-right: 1px solid #2A2940; }
+.sidebar-nav a { color: #b3b3b3; }
+.sidebar-nav a:hover { color: #fff; background-color: #2A2940; }
+
+/* 5. PAGE CONTENT */
+.page-content { padding-top: 70px; }
+
+/* 6. BANNER DO DECK */
+.deck-header-section {
+    background: linear-gradient(to bottom, #4B497C 0%, #1E1D2F 100%);
+    padding: 30px 30px 40px 30px;
+    display: flex; align-items: flex-end;
+    min-height: 200px;
+    margin-top: 0;
+}
+
+.deck-info-container {
+    display: flex; align-items: flex-end; gap: 30px;
+    width: 100%; max-width: 1200px; margin: 0 auto;
+}
+
+/* Capa do Deck (Quadrada) */
+.deck-cover {
+    width: 200px; height: 200px; min-width: 200px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+    background-color: #2A2940;
+    overflow: hidden;
+    position: relative;
+    border-radius: 8px; /* Quadrado arredondado */
+}
+.deck-cover img { width: 100%; height: 100%; object-fit: cover; }
+.cover-fallback { 
+    width: 100%; height: 100%; 
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+/* Textos */
+.deck-text { flex: 1; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+.deck-label { font-size: 0.8rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 5px; display: block; opacity: 0.9; }
+.deck-text h1 { font-size: 3.5rem; font-weight: 800; margin: 0 0 10px 0; line-height: 1; }
+.deck-desc { font-size: 1rem; color: #ddd; margin-bottom: 15px; max-width: 600px; line-height: 1.5; }
+
+.deck-meta { font-size: 0.95rem; color: #ccc; display: flex; align-items: center; gap: 10px; }
+.mini-avatar { width: 24px; height: 24px; border-radius: 50%; object-fit: cover; }
+.highlight-text { color: #fff; font-weight: 600; cursor: pointer; }
+.highlight-text:hover { text-decoration: underline; }
+.dot-separator { font-size: 0.8em; opacity: 0.6; }
+
+/* 7. BARRA DE AÇÕES */
+.action-bar { padding: 20px 30px; max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 20px; }
+
+.btn-spotify-primary {
+    background-color: #4CAF50; color: #fff; border: none; border-radius: 30px;
+    padding: 14px 38px; font-size: 14px; font-weight: 700; text-transform: uppercase;
+    cursor: pointer; transition: transform 0.2s, background-color 0.2s; display: flex; align-items: center; gap: 10px;
+}
+.btn-spotify-primary:hover { background-color: #43A047; transform: scale(1.05); }
+
+.btn-secondary-icon {
+    background: transparent; border: 1px solid rgba(255,255,255,0.2); color: #ccc;
+    width: 42px; height: 42px; border-radius: 50%; cursor: pointer;
+    font-size: 16px; display: flex; align-items: center; justify-content: center; transition: all 0.2s;
+}
+.btn-secondary-icon:hover { border-color: #fff; color: #fff; transform: scale(1.05); }
+.btn-secondary-icon.danger:hover { border-color: #ff5252; color: #ff5252; }
+
+/* 8. LISTA DE CARTAS (Estilo Tabela/Playlist) */
+.content-section { padding: 30px; max-width: 1200px; margin: 0 auto; }
+.section-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 20px; color: #fff; border-bottom: 1px solid #2A2940; padding-bottom: 15px; }
+
+.cards-list-container { display: flex; flex-direction: column; gap: 8px; }
+
+/* Linha do Flashcard */
+.flashcard-row {
+    background-color: #2A2940; /* Fundo escuro */
+    padding: 15px 20px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s;
+    border: 1px solid transparent;
+}
+
+.flashcard-row:hover { 
+    background-color: #34334D; 
+    border-color: #4B497C; 
+}
+
+.fc-number { color: #777; font-weight: bold; width: 30px; font-size: 0.9rem; }
+.fc-question { font-weight: 600; color: #fff; font-size: 1rem; flex: 1; margin-right: 20px;}
+/* A resposta fica mais apagada até passar o mouse (efeito spoiler) - opcional */
+.fc-preview { color: #bbb; font-size: 0.9rem; max-width: 300px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .deck-info-container { flex-direction: column; align-items: center; text-align: center; }
+    .deck-cover { width: 160px; height: 160px; min-width: 160px; }
+    .deck-text h1 { font-size: 2.5rem; }
+    .action-bar { justify-content: center; }
+}

@@ -13,10 +13,39 @@ body {
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-direction: column;
+    cursor: default;
+}
+/* Estado inicial (Escondido) */
+.sidebar {
+    position: fixed;
+    left: -250px; /* Escondido à esquerda */
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background: #fff;
+    transition: left 0.3s ease; /* Animação suave */
+    z-index: 1000;
 }
 
+/* Estado ATIVO (Quando o JS adiciona esta classe) */
+.sidebar.active {
+    left: 0; /* Traz para a tela */
+}
+
+/* Overlay (Fundo escuro) */
+.sidebar-overlay {
+    display: none; /* Escondido */
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+}
+
+.sidebar-overlay.active {
+    display: block; /* Aparece */
+}
 /* Estilo para links genéricos */
 a {
     text-decoration: none;
@@ -68,9 +97,21 @@ a {
     box-sizing: border-box;
 }
 header {
+
+    height: 70px;
+    display: flex;
+    position: fixed;
+    background-color: rgba(43, 45, 66, 0.5); /* Distinct semi-transparent bg */
+    border-bottom: 1px solid rgba(176, 176, 176, 0.1);
+    padding: 20px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 header .logo {
@@ -165,6 +206,7 @@ footer img {
     width: 400px;
     text-align: center;
     border: 1px solid #5A5A5A;
+    margin: 60px auto; 
 }
 
 .form-container h1 {
@@ -270,12 +312,273 @@ textarea:focus {
     box-shadow: 0 0 0 4px rgba(154,162,255,0.08);
 }
 
-/* responsive: let inputs fill container on small screens */
-@media (max-width: 480px) {
-    input[type="text"],
-    input[type="password"],
-    input[type="email"],
-    textarea {
-        max-width: 100%;
-    }
+/* --- Home Page Styles --- */
+
+#recentlyviewedContainer {
+    padding: 40px;
+    margin: 20px 0;
+}
+
+#recentlyviewedContainer h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.recently-viewed-list {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.deck-card {
+    min-width: 180px;
+    padding: 16px;
+    background-color: rgba(58, 61, 80, 0.6);
+    border: 1px solid rgba(176, 176, 176, 0.2);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.deck-card:hover {
+    transform: translateY(-4px);
+    background-color: rgba(58, 61, 80, 0.8);
+}
+
+.deck-thumbnail {
+    width: 100%;
+    height: 120px;
+    background-color: rgba(176, 176, 176, 0.2);
+    border-radius: 4px;
+    margin-bottom: 12px;
+}
+
+.deck-name {
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.deck-creator {
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+#recommendedContainer {
+    padding: 40px;
+    margin: 20px 0;
+}
+
+#recommendedContainer h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.recommended-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.recommended-deck {
+    padding: 20px;
+    background-color: rgba(58, 61, 80, 0.6);
+    border: 1px solid rgba(176, 176, 176, 0.2);
+    border-radius: 8px;
+    display: flex;
+    gap: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.recommended-deck:hover {
+    background-color: rgba(58, 61, 80, 0.8);
+}
+
+.recommended-thumbnail {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(176, 176, 176, 0.2);
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.recommended-info {
+    flex-grow: 1;
+}
+
+#ToBeDefined {
+    padding: 40px;
+    margin: 20px 0;
+}
+
+#ToBeDefined h2 {
+    margin-top: 0;
+}
+
+#ToBeDefined ul {
+    opacity: 0.7;
+    line-height: 1.8;
+}
+
+.sidebar-btn {
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    padding: 8px 16px;
+    border: 1px solid #B0B0B0;
+    border-radius: 4px;
+    background-color: transparent;
+    color: #E0E0E0;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 14px;
+}
+
+.sidebar-btn:hover {
+    opacity: 0.7;
+    background-color: rgba(176, 176, 176, 0.1);
+}
+
+.profile-pic {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: rgba(176, 176, 176, 0.3);
+    border: 2px solid #B0B0B0;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.profile-pic:hover {
+    opacity: 0.7;
+}
+
+.header-controls {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+/* small helpers for createFlashcard page */
+.image-preview {
+    margin-top: 8px;
+}
+.answers-grid { /* not used by default but available */
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+}
+
+/* File input (browse) */
+input[type="file"] {
+    display: block;
+    width: 100%;
+    padding: 10px 12px;
+    background-color: rgba(58,61,80,0.92);
+    border: 1px solid #5A5A5A;
+    border-radius: 6px;
+    color: #E0E0E0;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 14px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+/* Style the native button inside file inputs (modern browsers) */
+input[type="file"]::file-selector-button {
+    margin-right: 8px;
+    padding: 8px 12px;
+    background: rgba(176,176,176,0.08);
+    border: 1px solid #5A5A5A;
+    color: #E0E0E0;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Combobox / select */
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 100%;
+    max-width: 420px;
+    padding: 10px 40px 10px 12px; /* leave room for custom arrow */
+    background-color: rgba(58,61,80,0.92);
+    border: 1px solid #5A5A5A;
+    border-radius: 6px;
+    color: #E0E0E0;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 14px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' stroke='%23E0E0E0' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 12px 8px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+/* Combobox focus */
+select:focus {
+    outline: none;
+    border-color: #9AA2FF;
+    box-shadow: 0 0 0 4px rgba(154,162,255,0.06);
+}
+
+/* Custom radios & checkboxes (modern, hides native look) */
+input[type="radio"],
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    min-height: 18px;
+    margin: 0 8px 0 0;
+    vertical-align: middle;
+    border: 1.5px solid #5A5A5A;
+    background-color: rgba(58,61,80,0.92);
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* radio base uses circle shape */
+input[type="radio"] {
+    border-radius: 50%;
+}
+
+/* checked states: use small SVGs as indicators */
+input[type="checkbox"]:checked {
+    background-color: #9AA2FF;
+    border-color: #9AA2FF;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 10'%3E%3Cpolyline points='1 5.5 4 9 11 1' stroke='%23fff' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 12px 12px;
+}
+
+/* radio checked: inner dot */
+input[type="radio"]:checked {
+    background-color: #9AA2FF;
+    border-color: #9AA2FF;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Ccircle cx='6' cy='6' r='3' fill='%23fff'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 10px 10px;
+}
+
+/* focus states for accessibility */
+input[type="radio"]:focus,
+input[type="checkbox"]:focus,
+input[type="file"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(154,162,255,0.06);
+    border-color: #9AA2FF;
+}
+
+/* small helper: align checkbox/radio with text lines in input-group */
+.input-group .control-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }

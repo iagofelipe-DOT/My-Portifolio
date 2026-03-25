@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Create Flashcard — Glider</title>
+    
+    <link rel="stylesheet" href="../../LandingPage/CSS/style.css">
+    <link rel="stylesheet" href="../home.css">
+    <link rel="stylesheet" href="../../components/sidebar.css">
+    <style>
+        /* Bloqueia a seleção de texto */
+        .no-select {
+            -webkit-user-select: none; /* Safari */
+            -moz-user-select: none;    /* Firefox */
+            -ms-user-select: none;     /* IE/Edge */
+            user-select: none;         /* Padrão */
+            cursor: default;           /* Cursor de seta padrão */
+        }
+        </style>
+    </head>
+<body>
+    <header class="no-select">
+        <div class="header-left">
+            <button class="sidebar-btn" id="sidebarToggle">☰</button> 
+            <h1 id="siteTitle" class="logo" onclick="window.location.href='../home.html'">Glider</h1>
+        </div>
+    </header>
+    <div class="form-container" style="width:520px; padding-top: 100px; margin-top: 120px;">
+        <h1 class="no-select">Flashcard Creator</h1>
+
+        <div class="input-group">
+            <label for="setName" class="no-select">Flashcard set name</label>
+            <input id="setName" type="text" placeholder="e.g. Biology basics">
+        </div>
+
+        <div class="input-group">
+            <label for="question" class="no-select">Question</label>
+            <textarea id="question" rows="3" placeholder="Write the question..."></textarea>
+        </div>
+
+        <div class="input-group">
+            <label class="no-select">Image (optional)</label>
+            <input id="imageFile" type="file" accept="image/*">
+            <div id="imagePreview" class="image-preview" aria-hidden="true"></div>
+        </div>
+
+        <div class="input-group">
+            <label class="no-select">Answers configuration</label>
+            <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+                <label style="margin:0;" class="no-select">
+                    Count
+                    <select id="answersCount">
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                    </select>
+                </label>
+
+                <label style="margin:0;" class="no-select">
+                    <input id="multipleCorrect" type="checkbox"> multiple correct
+                </label>
+            </div>
+        </div>
+
+        <div id="answersArea" class="input-group" aria-live="polite"></div>
+
+        <div style="display:flex;gap:10px;justify-content:space-between;align-items:center;">
+            <div id="status" style="opacity:0.9;font-size:13px;"></div>
+            <div style="display:flex;gap:8px;">
+                <button id="previewBtn" class="btn-secondary" type="button">Preview</button>
+                <button id="submitBtn" class="btn-primary" type="button">Create</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./createFlashcard.js"></script>
+</body>
+</html>

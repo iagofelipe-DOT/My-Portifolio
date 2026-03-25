@@ -8,38 +8,36 @@
     <link rel="stylesheet" href="../../LandingPage/CSS/style.css">
     <title>Glider</title>
 </head>
-<body style = "background-color: gray;">
-    <!-- Please don't forget to change the bg color when you go online ffs-->
+<body>
+    <header><a href="../index.html" id="siteTitle"><h1>Glider</h1></a></header>
 
-    <header><a href="../index.html"><h1>Glider</h1></a></header>
-
-    <div id="credentialsContainer">
+    <div id="credentialsContainer" style="max-width: 420px; margin: 40px auto;">
 
         <hr>
         <h2>Register</h2>
-        <!---->
-        <label id="usernamelbl"><b>Username</b></label><br>
-        <input type="text" id="usernameField" placeholder="Insert your Username here"><br>
+        <div class="input-group">
+            <label for="usernameField"><b>Username</b></label>
+            <input type="text" id="usernameField" placeholder="Insert your username here">
+        </div>
 
-        <!--TODO: Search the naming convention for HTML tags because this is not understandable at all-->
-        <label id="emaillbl"><b>Email</b></label><br>
-        <input type="text" id="emailField" placeholder="Insert your Email here"><br>
+        <div class="input-group">
+            <label for="emailField"><b>Email</b></label>
+            <input type="email" id="emailField" placeholder="Insert your email here">
+        </div>
 
-        <!--"lbl" is pretty here tho, just fix the "emaillbl" wtf is that supposed to mean-->
-        <label id="Passwordlbl"><b>Password</b></label><br>
-
-        <!--TODO: Learn how to add an option to reveal the password-->
-        <input type="password" id="passwordField" placeholder="Insert your Password here"><br>
-        <h3>Already have an account? Log in <a href = "Login.html"> <i>here!</i></a></h3>
+        <div class="input-group">
+            <label for="passwordField"><b>Password</b></label>
+            <input type="password" id="passwordField" placeholder="Insert your password here">
+        </div>
+        <h3 style="font-size: 14px; margin-top: 20px;">Already have an account? <a href="Login.html">Log in here</a></h3>
         <hr>
 
-        <!--Don't forget to add borders to the div-->
         <button id="registerbtn" class="btn-primary">Register</button>
 
     </div>
     
 </body>
-<script src=""></script>
+<script type="module" src="./Register.js"></script>
 </html>
 
 <!--

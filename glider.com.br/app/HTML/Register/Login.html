@@ -7,31 +7,30 @@
     <title>Glider</title>
 </head>
 <body>
-    <!-- Please don't forget to change the bg color when you go online ffs-->
-
-    <header><a href="../index.html"><h1>Glider</h1></a></header>
+    <header><a href="../index.html" id="siteTitle"><h1>Glider</h1></a></header>
     
-    <div id="credentialsContainer">
+    <div id="credentialsContainer" style="max-width: 420px; margin: 40px auto;">
 
         <hr>
         <h2>Login</h2>
 
-        <!--TODO: Search the naming convention for HTML tags because this is not understandable at all-->
-        <label id="emaillbl"><b>Email</b></label><br>
-        <input type="text" id="emailField" placeholder="Insert your Email here"><br>
+        <div class="input-group">
+            <label for="emailField"><b>Email</b></label>
+            <input type="email" id="emailField" placeholder="Insert your email here">
+        </div>
 
-        <!--lbl is pretty here tho, just fix the "emaillbl" wtf is that supposed to mean-->
-        <label id="Passwordlbl">Password</label><br>
+        <div class="input-group">
+            <label for="passwordField"><b>Password</b></label>
+            <input type="password" id="passwordField" placeholder="Insert your password here">
+        </div>
 
-        <!--TODO: Learn how to add an option to reveal the password-->
-        <input type="password" id="passwordField" placeholder="Insert your Password here"><br>
-        <h3>Don't have an account? Register <a href = "Register.html"> here!</a></h3>
+        <h3 style="font-size: 14px; margin-top: 20px;">Don't have an account? <a href="Register.html">Register here</a></h3>
         <hr>
-        <!--Don't forget to add borders to the div-->
 
         <button id="loginbtn" class="btn-primary">Login</button>
 
     </div>
     
 </body>
+<script type="module" src="./Login.js"></script>
 </html>
