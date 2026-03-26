@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile — Glider</title>
+    
+    <link rel="stylesheet" href="../../LandingPage/CSS/style.css">
+    <link rel="stylesheet" href="../home.css">
+    <link rel="stylesheet" href="viewProfile.css">
+    <link rel="stylesheet" href="../../components/sidebar.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="no-select">
+        <div class="header-left">
+            <button class="sidebar-btn" id="sidebarToggle">☰</button>
+            <h1 id="siteTitle" class="logo" onclick="window.location.href='../home.html'">Glider</h1>
+        </div>
+    </header>
+
+    <div class="page-content">
+        
+        <div class="profile-header-section">
+            <div class="profile-info-container">
+                <div class="profile-avatar no-select">
+                    <img 
+                        id="profileImage" 
+                        src="" 
+                        alt="Profile" 
+                        onerror="this.onerror=null; this.src='https://wthlsjmxbhtnwacklwci.supabase.co/storage/v1/object/public/imas/profile_pictures/Subsequent-stages-of-the-glider-pattern-on-Conways-Game-of-Life-cellular-automaton-grid_Q320.jpg';"
+                    >
+                </div>
+                
+                <div class="profile-text">
+                    <span class="profile-label no-select">PROFILE</span>
+                    <h1 id="profileName" class="no-select">Loading...</h1>
+                    
+                    <div class="profile-stats no-select">
+                        <span id="deckCount">0 Public Decks</span> • 
+                        <span id="followersCount">0 Followers</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="action-bar no-select">
+            <button id="followBtn" class="btn-spotify-primary">Follow</button>
+            <button id="shareBtn" class="btn-icon" title="Share Profile"><i class="fa-solid fa-share-nodes"></i></button>
+            <button class="btn-icon"><i class="fa-solid fa-ellipsis"></i></button>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title no-select">Public Decks</h2>
+            <div id="publicDecksList" class="decks-grid">
+                <div class="loading-spinner no-select">Loading decks...</div>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="module" src="./viewProfile.js"></script>
+</body>
+</html>
