@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Quicksand:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+    font-family: 'Nunito', sans-serif; 
+    -webkit-font-smoothing: antialiased;
+  }
+
+  p {
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-weight: 0;
+    font-style: normal;
+  }
+
+  .pagina-fundo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .portfolio-container {
+    display: flex;
+    width: 100%;
+    max-width: 900px;
+    height: 600px; 
+    border: 1px solid #fff;
+  }
+
+  .menu-lateral {
+    width: 200px;
+    min-width: 200px;
+    flex-shrink: 0;
+    border-right: 1px solid #fff;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .espaco-topo-menu {
+    height: 120px;
+  }
+
+  .lista-abas {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .lista-abas button {
+    width: 100%;
+    box-sizing: border-box;
+
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    border-left: none;
+    border-right: none;
+    margin-bottom: -1px; 
+    padding: 8px 24px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.2s;
+	  font-family: 'VT323', sans-serif;
+    letter-spacing: 2px;
+  }
+
+  .lista-abas button:hover {
+    background: #222;
+  }
+
+  .lista-abas button.ativo {
+    background: #333;
+    font-weight: bold;
+  }
+
+
+  .conteudo-principal {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .sobre-mim-texto {
+    flex-grow: 1; 
+    padding: 20px;
+    overflow-y: auto;
+  }
+
+  .aba-dinamica {
+    border-top: 1px solid #fff;
+
+    transition: height 0.4s ease-in-out;
+    overflow: hidden; 
+    background-color: #050505; 
+  }
+
+  .conteudo-midia {
+    display: flex;
+    gap: 15px;
+    padding: 15px;
+    height: 100%;
+    box-sizing: border-box;
+    align-items: flex-end;
+  }
+
+  .cartao-midia {
+    flex: 1;
+    border: 1px solid #fff;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 10px;
+    position: relative;
+    font-size: 10px;
+    background: #111;
+  }
+
+
+  .play-icon {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    background: #fff;
+    color: #000;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .divisor {
+    border-top: 1px solid #fff;
+    margin: 10px -10px;
+  }
+
+  .grid-inventions {
+    display: flex;
+    gap: 2px;
+    margin-bottom: auto;
+  }
+  .block {
+    width: 15px;
+    height: 10px;
+    background: #fff;
+  }
+
+  .conteudo-generico {
+    padding: 20px;
+  }
